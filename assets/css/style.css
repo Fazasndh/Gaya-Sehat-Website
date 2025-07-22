@@ -1,0 +1,1139 @@
+/* =================================
+   1. Variabel & Gaya Dasar (Global)
+   ================================= */
+:root {
+    --primary: #537D5D;
+    --secondary: #73946B;
+    --accent1: #9EBC8A;
+    --accent2: #D2D0A0;
+    --text-dark: #333;
+    --text-light: #fff;
+    --bg-light: #f9f9f9;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    line-height: 1.6;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+
+/* =================================
+   2. Header & Navigasi Utama
+   ================================= */
+
+/* Style header utama yang digunakan (menggunakan variabel warna) */
+header {
+    background: var(--primary);
+    color: var(--text-light);
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Layout flex untuk navigasi di dalam header */
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo di dalam header */
+header .logo {
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+header .logo img {
+    height: 60px;
+    width: auto;
+    display: block;
+}
+
+/* Menu navigasi (daftar link) */
+header ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+header ul li {
+    margin-left: 20px;
+}
+
+header ul li a {
+    color: var(--text-light);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+header ul li a:hover {
+    color: var(--accent2);
+}
+
+/* Style khusus untuk link yang berfungsi sebagai tombol (misal: Register) */
+header ul li a.btn {
+    background: var(--accent1);
+    color: var(--text-dark);
+    padding: 8px 15px;
+    border-radius: 5px;
+}
+
+
+/* =================================
+   4. Komponen UI (Alerts & Hero)
+   ================================= */
+
+/* Pemberitahuan (Alerts) */
+.alert { 
+    padding: 15px; 
+    margin-bottom: 20px; 
+    border-radius: 5px; 
+}
+.alert.error { 
+    background-color: #f8d7da; 
+    color: #721c24; 
+}
+.alert.success { 
+    background-color: #d4edda; 
+    color: #155724; 
+}
+
+/* Bagian Hero (Banner Utama) */
+.hero {
+    background: var(--secondary);
+    color: var(--text-light);
+    text-align: center;
+    padding: 4rem 1rem;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+
+/* =================================
+   5. Footer
+   ================================= */
+.footer {
+    text-align: center;
+}
+
+
+/* =================================
+   Halaman Tentang Kami (About Us)
+   ================================= */
+
+.about-page-wrapper {
+    padding: 4rem 0; 
+}
+
+/* Bagian Intro (Judul dan Paragraf Atas) */
+.about-intro {
+    display: flex;
+    gap: 3rem; 
+    align-items: flex-start; 
+    margin-bottom: 4rem; 
+}
+
+.about-intro-title {
+    flex: 1; 
+}
+
+.about-intro-title h1 {
+    font-size: 2.5rem;
+    line-height: 1.3;
+    color: #333;
+    font-weight: 700;
+}
+
+.about-intro-text {
+    flex: 1.5; 
+    padding-top: 5px; 
+}
+
+.about-intro-text p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #555;
+}
+
+/* Grid untuk Kartu Visi & Misi */
+.vision-mission-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 2rem; 
+}
+
+/* Styling Umum untuk Kartu */
+.vm-card {
+    background-color: #ffffff;
+    border: 1px solid #e9ecef;
+    border-radius: 16px;
+    padding: 2.5rem 2rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.vm-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling untuk Ikon di dalam Kartu */
+.vm-icon-wrapper {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    background-color: #eaf2ff; 
+}
+
+.vm-icon-wrapper i {
+    font-size: 1.75rem;
+    color: #537D5D; 
+}
+
+.vm-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.vm-card p, .vm-card ul {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #555;
+    margin: 0;
+}
+
+.vm-card ul {
+    list-style: none; 
+    padding-left: 0;
+}
+
+.vm-card ul li {
+    padding-left: 1.5em; 
+    position: relative;
+    margin-bottom: 0.5rem;
+}
+
+/* Menambahkan ikon centang custom sebelum list misi */
+.vm-card ul li::before {
+    content: '\f00c'; 
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    color: #28a745; 
+    position: absolute;
+    left: 0;
+    top: 5px;
+}
+
+
+/* Efek Khusus untuk Kartu Visi (Latar Belakang Titik-titik) */
+.vm-card-vision {
+    position: relative;
+    background-color: #f8faff;
+    background-image: radial-gradient(circle at 1px 1px, #d1eaff 1px, transparent 0);
+    background-size: 25px 25px;
+}
+
+
+/* Responsif untuk Layar Kecil (Mobile) */
+@media (max-width: 768px) {
+    .about-intro, .vision-mission-grid {
+        grid-template-columns: 1fr; 
+        flex-direction: column; 
+    }
+
+    .about-intro-title h1 {
+        font-size: 2rem;
+    }
+}
+
+/* =================================
+   HALAMAN DASHBOARD PENGGUNA 
+   ================================= */
+
+.dashboard-hero {
+    position: relative; 
+    color: var(--text-light);
+    text-align: center;
+    padding: 6rem 1.5rem;
+     background-image: url('../image/bg_hero.jpg');  
+    
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; /* Mencegah gambar berulang */
+}
+
+/* Lapisan gelap (overlay) agar tulisan tetap terbaca */
+.dashboard-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: 1;
+}
+
+/* Memastikan teks berada di atas lapisan overlay */
+.dashboard-hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+.dashboard-hero h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+.dashboard-hero .motivation-quote {
+    font-size: 1.2rem;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    max-width: 600px;
+    margin: 0 auto;
+    opacity: 0.95;
+    font-weight: 300;
+}
+
+
+/* Area Konten Utama setelah Hero */
+.page-content {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+@keyframes shimmer {
+  0% {
+    background-position: 100% 0%;
+  }
+  100% {
+    background-position: -100% 0%;
+  }
+}
+
+/*terapkan animasi tersebut ke class yang sudah kita buat */
+.animated-username {
+  /* 1. Buat gradasi warna sebagai background teks */
+  background-image: linear-gradient(
+    to right, 
+    var(--accent1), 
+    var(--text-light), 
+    var(--accent2), 
+    var(--accent1)
+  );
+  
+  /* 2. Atur ukuran background agar lebih besar dari teksnya */
+  background-size: 200% auto;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text; 
+  animation: shimmer 5s linear infinite;
+}
+
+
+/* 2. Layout Per Bagian (Section) */
+.dashboard-section {
+    margin-bottom: 4rem;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.section-header h2 {
+    margin: 0;
+    font-size: 1.8rem;
+    color: var(--text-dark);
+}
+
+.view-all-link {
+    text-decoration: none;
+    color: var(--primary);
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.view-all-link:hover {
+    color: var(--secondary);
+}
+
+
+/* 3. Grid untuk Kartu (BMI & Artikel) */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+
+/* 4. Style Kartu Konten (Content Card) */
+.content-card {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.content-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.card-image {
+    height: 180px;
+    background-color: #f0f0f0; 
+    background-size: cover;
+    background-position: center;
+}
+
+.card-content {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-content h3 {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    font-size: 1.25rem;
+}
+
+.card-content p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: #555;
+    flex-grow: 1; 
+}
+
+.card-meta {
+    font-size: 0.85rem;
+    color: #777;
+    margin-bottom: 0 !important; 
+}
+
+.read-more-link {
+    text-decoration: none;
+    color: var(--secondary);
+    font-weight: bold;
+    align-self: flex-start; 
+}
+
+
+/* 5. Style Khusus untuk Kartu BMI */
+.bmi-category-bg-underweight { background-color: #537D5D; }
+.bmi-category-bg-normal { background-color: var(--primary); }
+.bmi-category-bg-overweight { background-color: #73946B; }
+.bmi-category-bg-obese { background-color: #9EBC8A; }
+
+.card-image[class*="bmi-category-bg-"] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+}
+.bmi-value-display {
+    font-size: 3rem;
+    line-height: 1;
+}
+.bmi-label-display {
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+/* 6. Style untuk pesan 'kosong' */
+.empty-state {
+    grid-column: 1 / -1; 
+    text-align: center;
+    background: #f9f9f9;
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+/* =================================
+   FOOTER 
+   ================================= */
+.footer-minimal {
+    background-color: #222; 
+    color: #eee; 
+    padding: 20px 0;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.footer-top {
+    padding: 20px 0;
+}
+
+.social-icons {
+    margin-bottom: 15px;
+}
+
+.social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    background-color: #333;
+    color: #eee;
+    border-radius: 50%;
+    margin: 0 8px;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.social-icon:hover {
+    background-color: var(--primary);
+}
+
+.footer-links {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: #ccc;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--accent1); 
+}
+
+.main-links {
+    margin-bottom: 5px;
+}
+
+.secondary-links a {
+    font-size: 0.85rem;
+}
+
+.footer-bottom {
+    padding-top: 15px;
+    border-top: 1px solid #444;
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+.footer-bottom a {
+    color: var(--accent2);
+    text-decoration: none;
+}
+
+.footer-heart {
+    color: var(--accent2);
+    font-size: 0.9rem;
+}
+
+/* =================================
+   HALAMAN KALKULATOR BMI 
+   ================================= */
+
+/* Header Halaman */
+.calculator-page-header {
+    background-color: var(--bg-light);
+    text-align: center;
+    padding: 2.5rem 1.5rem;
+    border-bottom: 1px solid #e0e0e0;
+}
+.calculator-page-header h2 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    color: var(--primary);
+}
+
+/* Wrapper Utama Kalkulator */
+.calculator-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    padding: 3rem 0;
+}
+
+/* Kartu Formulir (Kolom Kiri) */
+.calculator-form-card {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+.calculator-form-card h3 {
+    margin-top: 0;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+.calculator-form-card .form-group {
+    margin-bottom: 1.5rem;
+}
+.calculator-form-card label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #555;
+}
+.calculator-form-card input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+.btn-calculate {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--text-light);
+    background-color: var(--primary);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.btn-calculate:hover {
+    background-color: var(--secondary);
+}
+
+/* Kartu Informasi & Hasil (Kolom Kanan) */
+.calculator-info-card {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+}
+.calculator-info-card h4 {
+    color: var(--primary);
+    border-bottom: 2px solid var(--accent1);
+    padding-bottom: 0.5rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+.bmi-category-list {
+    list-style: none;
+    padding: 0;
+    line-height: 1.8;
+}
+.bmi-category-list .dot {
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 10px;
+}
+.dot.underweight { background-color: #3498db; }
+.dot.normal { background-color: #2ecc71; }
+.dot.overweight { background-color: #f39c12; }
+.dot.obese { background-color: #e74c3c; }
+
+
+/* Tampilan Kartu Hasil */
+.result-display {
+    text-align: center;
+    padding: 2rem;
+    border-radius: 10px;
+    border-top: 8px solid;
+    margin-bottom: 1.5rem;
+}
+.result-display p {
+    margin: 0;
+    font-size: 1.1rem;
+}
+.result-bmi-value {
+    font-size: 4.5rem;
+    font-weight: bold;
+    line-height: 1.1;
+}
+.result-bmi-category {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.result-interpretation {
+    line-height: 1.7;
+    text-align: center;
+}
+
+/* Warna-warni untuk Kartu Hasil */
+.result-display.category-underweight { border-top-color: #3498db; color: #3498db; }
+.result-display.category-normal { border-top-color: #2ecc71; color: #2ecc71; }
+.result-display.category-overweight { border-top-color: #f39c12; color: #f39c12; }
+.result-display.category-obese { border-top-color: #e74c3c; color: #e74c3c; }
+
+/* Responsif untuk Layar Kecil */
+@media (max-width: 992px) {
+    .calculator-wrapper {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =================================
+   HALAMAN DEPAN (INDEX.PHP)
+   ================================= */
+
+/* Section Title Umum */
+.section-title {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 3rem;
+    color: var(--text-dark);
+    font-weight: 700;
+}
+
+/* --- 1. Hero Section --- */
+/* --- 1. Hero Section (Versi dengan Gambar Latar) --- */
+.hero-landing {
+    position: relative; 
+    color: var(--text-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 6rem 1.5rem;
+    min-height: 80vh;
+
+    /* GANTI 'home-hero.jpg' jika nama file Anda berbeda */
+    background-image: url('../image/bg_hero.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Menambahkan lapisan overlay gelap agar tulisan mudah dibaca */
+.hero-landing::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: 1; 
+}
+
+/* Memastikan konten teks berada di lapisan paling atas */
+.hero-landing .container {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+}
+.hero-subtitle {
+    font-size: 1.2rem;
+    font-weight: 300;
+    opacity: 0.9;
+    margin-bottom: 2rem;
+}
+.btn-primary-hero {
+    background-color: #fff;
+    color: var(--primary);
+    padding: 14px 30px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+.btn-primary-hero:hover {
+    background-color: var(--accent2);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+/* --- 2. Features Section --- */
+.features-section {
+    padding: 5rem 0;
+    background-color: var(--bg-light);
+}
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+.feature-card {
+    text-align: center;
+    padding: 1.5rem;
+}
+.feature-icon {
+    font-size: 2.5rem;
+    color: var(--secondary);
+    margin-bottom: 1rem;
+}
+.feature-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+.feature-card {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Atur kondisi akhir kartu (saat sudah terlihat)  */
+.feature-card.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* tetap gunakan jeda (delay) agar efeknya berurutan*/
+.features-grid .feature-card:nth-child(1) { transition-delay: 0.1s; }
+.features-grid .feature-card:nth-child(2) { transition-delay: 0.2s; }
+.features-grid .feature-card:nth-child(3) { transition-delay: 0.3s; }
+.features-grid .feature-card:nth-child(4) { transition-delay: 0.4s; }
+
+/* --- 3. Article Preview Section --- */
+.article-preview-section {
+    padding: 5rem 0;
+}
+.section-footer {
+    text-align: center;
+    margin-top: 3rem;
+}
+.btn-secondary {
+    background-color: transparent;
+    color: var(--primary);
+    padding: 12px 28px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    border: 2px solid var(--primary);
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+.btn-secondary:hover {
+    background-color: var(--primary);
+    color: #fff;
+}
+
+/* --- 4. CTA Section --- */
+.cta-section {
+    background-color: var(--secondary);
+    color: var(--text-light);
+    text-align: center;
+    padding: 5rem 1.5rem;
+}
+.cta-section h2 {
+    font-size: 2.2rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+.cta-section p {
+    margin-bottom: 2rem;
+}
+.btn-cta-final {
+    background-color: var(--accent1);
+    color: var(--text-dark);
+    padding: 14px 30px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+.btn-cta-final:hover {
+    background-color: var(--accent2);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+/* =================================
+   HALAMAN SEMUA ARTIKEL
+   ================================= */
+.page-header {
+    text-align: center;
+    padding: 2rem 0;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #e0e0e0;
+}
+.page-header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+.page-header p {
+    font-size: 1.1rem;
+    color: #6c757d;
+}
+
+/* --- Pagination --- */
+.pagination-wrapper {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+}
+.pagination {
+    display: flex;
+    padding-left: 0;
+    list-style: none;
+    border-radius: 0.375rem;
+}
+.page-item .page-link {
+    position: relative;
+    display: block;
+    padding: 0.5rem 1rem;
+    margin-left: -1px;
+    line-height: 1.25;
+    color: var(--primary);
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+}
+.page-item:first-child .page-link {
+    border-top-left-radius: 0.375rem;
+    border-bottom-left-radius: 0.375rem;
+}
+.page-item:last-child .page-link {
+    border-top-right-radius: 0.375rem;
+    border-bottom-right-radius: 0.375rem;
+}
+.page-item.active .page-link {
+    z-index: 1;
+    color: #fff;
+    background-color: var(--primary);
+    border-color: var(--primary);
+}
+.page-item.disabled .page-link {
+    color: #6c757d;
+    pointer-events: none;
+    background-color: #e9ecef;
+    border-color: #dee2e6;
+}
+.page-item:not(.disabled) .page-link:hover {
+    z-index: 2;
+    color: #fff;
+    background-color: var(--secondary);
+    border-color: var(--secondary);
+}
+
+/* =================================
+   HALAMAN DETAIL ARTIKEL 
+   ================================= */
+.article-container {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.article-detail-header {
+    margin-bottom: 2rem;
+    text-align: center;
+    background: none !important;
+    background-color: transparent !important; 
+    border: none !important; 
+    padding: 0 !important; 
+}
+
+.article-detail-header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 1rem;
+    color: var(--text-dark) !important; 
+}
+
+.article-meta {
+    font-size: 0.9rem;
+    color: #6c757d !important; 
+}
+
+.article-meta .meta-separator {
+    margin: 0 0.5rem;
+}
+
+.article-featured-image {
+    margin: 0 auto 2.5rem auto; 
+    text-align: center; 
+}
+
+.article-featured-image img {
+    width: 100%;
+    max-width: 90%; 
+    
+    height: auto; 
+    max-height: 450px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+
+.article-content {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #343a40;
+}
+
+.article-content p {
+    margin-bottom: 1.5rem;
+}
+
+.article-footer {
+    margin-top: 3rem;
+    text-align: center;
+    border-top: 1px solid #e0e0e0;
+    padding-top: 2rem;
+}
+
+/* =================================
+   HALAMAN PROFIL PENGGUNA 
+   ================================= */
+
+.profile-form-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+
+.profile-form-container .form-card {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    margin-bottom: 2rem;
+}
+.profile-form-container .form-card h4 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 1rem;
+}
+.profile-form-container .form-group {
+    margin-bottom: 1.5rem;
+}
+.profile-form-container label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+.profile-form-container input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+.profile-form-container input:disabled {
+    background-color: #e9ecef;
+    cursor: not-allowed;
+}
+.btn-save-profile {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--text-light);
+    background-color: var(--primary);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.btn-save-profile:hover {
+    background-color: var(--secondary);
+}
+
+/* Responsif untuk Layar Kecil */
+@media (max-width: 992px) {
+    .profile-layout {
+        grid-template-columns: 1fr; 
+    }
+}
+
+/* =================================
+   HALAMAN LOGIN & REGISTER 
+   ================================= */
+.form-wrapper {
+    max-width: 450px;
+    margin: 3rem auto; 
+    padding: 2.5rem;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+
+.auth-form-simple h2 {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 2rem;
+    font-weight: 700;
+}
+
+.auth-form-simple .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.auth-form-simple label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.auth-form-simple input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.auth-form-simple button {
+    width: 100%;
+    padding: 14px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--text-light);
+    background-color: var(--primary);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.auth-form-simple button:hover {
+    background-color: var(--secondary);
+}
+
+.form-footer-note {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+}
+
+.form-footer-note a {
+    color: var(--primary);
+    font-weight: 600;
+    text-decoration: none;
+}
+

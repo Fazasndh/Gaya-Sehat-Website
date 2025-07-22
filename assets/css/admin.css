@@ -1,0 +1,150 @@
+
+:root {
+    --bs-primary: #537D5D;
+    --bs-secondary: #73946B;
+}
+
+/* --- Layout Utama --- */
+.sidebar {
+    width: 250px;
+    min-height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+.sidebar {
+    transition: transform 0.3s ease;
+}
+.main-content-wrapper {
+    transition: margin-left 0.3s ease;
+}
+
+/* Style untuk logo gambar di sidebar */
+.sidebar-logo-img {
+    max-width: 80px; 
+    height: auto;
+    background-color: #fff; 
+    border-radius: 50%; 
+    padding: 5px; 
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.sidebar-title h4 {
+    font-weight: bold;
+}
+
+.sidebar .nav-link {
+    border-radius: 0.375rem;
+    margin-bottom: 0.25rem;
+    transition: background-color 0.2s ease-in-out;
+    
+    
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+/* KOTAK UNTUK IKON DENGAN LEBAR YANG SAMA */
+.sidebar-icon {
+    display: inline-block;
+    width: 20px; 
+    text-align: center;
+}
+
+.sidebar .nav-link.active,
+.sidebar .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.main-content-wrapper {
+    margin-left: 250px; 
+    width: calc(100% - 250px); 
+}
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+/* --- Sidebar --- */
+.sidebar-title h4 {
+    font-weight: bold;
+}
+
+.sidebar .nav-link {
+    border-radius: 0.375rem;
+    margin-bottom: 0.25rem;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.sidebar .nav-link.active,
+.sidebar .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* --- Kartu Statistik --- */
+.card-statistic {
+    color: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    text-align: center;
+    border: none;
+}
+.card-statistic h3 {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+.card-statistic-1 { background: linear-gradient(135deg, #0d6efd, #0a58ca); }
+.card-statistic-2 { background: linear-gradient(135deg, #198754, #146c43); }
+.card-statistic-3 { background: linear-gradient(135deg, #6c757d, #5a6268); }
+
+/* --- Badge Status di Tabel --- */
+.badge-status {
+    padding: 0.5em 0.75em;
+    font-size: 0.75rem;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 0.375rem;
+}
+.badge-status.published {
+    background-color: #198754;
+    color: white;
+}
+.badge-status.draft {
+    background-color: #ffc107;
+    color: #000;
+}
+
+#sidebar-toggle {
+    display: none;
+}
+
+/* Aturan untuk layar dengan lebar MAKSIMAL 992px (Tablet dan HP) */
+@media (max-width: 992px) {
+    /* Sembunyikan sidebar ke kiri layar */
+    .sidebar {
+        transform: translateX(-100%);
+        z-index: 1050; /* Pastikan sidebar di atas konten saat muncul */
+    }
+
+    /* Tampilkan sidebar saat memiliki class .show */
+    .sidebar.show {
+        transform: translateX(0);
+    }
+    
+    /* Buat konten utama menjadi lebar penuh */
+    .main-content-wrapper {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    /* Tampilkan tombol hamburger */
+    #sidebar-toggle {
+        display: block;
+    }
+}
